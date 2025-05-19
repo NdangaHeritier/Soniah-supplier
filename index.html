@@ -7,9 +7,9 @@
     <meta name="keywords" content="hardware store, tools, construction, plumbing, agriculture, Rwanda, Bugesera, Nyamata">
     <meta name="author" content="Soniah Company Suppliers Ltd">
 
-    <link rel="icon" href="Logo.png" type="image/png">
+    <link rel="icon" href="images/Logo.png" type="image/png">
     <title>Soniah Supplier Comapny Ltd - Your Tool Destination</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="tailwind/output.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         body {
@@ -64,20 +64,30 @@
         <div class="container mx-auto flex flex-wrap justify-between items-center px-4">
             <div class="text-2xl sm:text-3xl font-bold">
                 <a href="/" class="inline-flex items-center">
-                    <img src="Logo.png" alt="Soniah Supplier Company Ltd" class="h-12 sm:h-16 mr-2">
+                    <img src="images/Logo.png" alt="Soniah Supplier Company Ltd" class="h-12 sm:h-16 mr-2">
                     <span class="text-yellow-400">Soniah</span>
                 </a>
             </div>
-            <nav>
-                <ul class="flex flex-wrap space-x-4 sm:space-x-6 text-sm sm:text-base">
-                    <li><a href="#home" class="hover:text-yellow-400 transition-colors">Home</a></li>
+            <div class="hidden items-center justify-end max-sm:flex">
+                <button id="menuBtn" onclick="toggleMenu()" class="flex items-center justify-center p-2 rounded-t-md hover:bg-black/20 focus:bg-black/20">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                </button>
+            </div>
+            <nav id="menu" class="max-sm:fixed max-sm:p-1 max-sm:bottom-0 max-sm:left-0 max-sm:right-0 max-sm:top-16 max-sm:bg-blue-950/80 max-sm:hidden">
+                <ul class="flex max-sm:py-8 max-sm:p-3 rounded-md flex-wrap max-sm:grid max-sm:grid-cols-2 max-sm:gap-2 max-sm:space-y-4 sm:space-x-6 text-sm sm:text-base bg-blue-900 max-sm:flex-col">
+                    <li><a href="#home" class="hover:text-yellow-400 transition-colors max-sm:list-item">Home</a></li>
                     <li><a href="#mission-vision" class="hover:text-yellow-400 transition-colors">Mission & Vision</a></li>
                     <li><a href="#products" class="hover:text-yellow-400 transition-colors">Products</a></li>
                     <li><a href="#services" class="hover:text-yellow-400 transition-colors">Services</a></li>
                     <li><a href="#map" class="hover:text-yellow-400 transition-colors">Our Location</a></li>
                     <li><a href="#contact" class="hover:text-yellow-400 transition-colors">Contact Us</a></li>
-                    <li class="min-sm:ps-5">
+                    <li class="min-sm:ps-5 max-sm:mt-8 py-2">
                         <a href="#" onclick="toggleQuoteModal()" class="bg-blue-200 hover:bg-blue-200/70 duration-300  border border-blue-900 text-blue-900 font-semibold py-3 px-5 rounded-md">Book a Quote</a>
+                    </li>
+                    <li class="min-sm:ps-5 max-sm:mt-8 py-2 hidden max-sm:block">
+                        <a href="#contact" class="bg-blue-200/5 hover:bg-blue-200/10 duration-300  border border-blue-200 text-blue-200 font-semibold py-3 px-5 rounded-md">Get In Touch</a>
                     </li>
                 </ul>
             </nav>
@@ -85,11 +95,11 @@
     </header>
 
     <!-- Hero Section -->
-    <section id="home" class="relative bg-blue-900 text-white py-16 sm:py-24 flex-1">
-        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('hardware-store.jpeg'); opacity: 0.4;"></div>
+    <section id="home" class="relative bg-blue-900 text-white py-24 flex-1">
+        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('images/hardware-store.jpeg'); opacity: 0.4;"></div>
         <div class="relative container mx-auto text-center px-5 flex flex-col items-center justify-center h-full">
             <h1 class="text-4xl sm:text-6xl font-bold mb-4">Soniah Supplier Company Ltd</h1>
-            <p class="text-lg sm:text-xl my-6 w-2/3 leading-relaxed">
+            <p class="text-lg sm:text-xl my-6 w-2/3 max-sm:w-full leading-relaxed">
                 Your trusted partner for premium tools and equipment in Rwanda. We specialize in providing durable, high-quality solutions for construction, agriculture, plumbing, and more. Let us help you achieve your goals with unmatched reliability and exceptional service.
             </p>
             <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
@@ -113,7 +123,7 @@
             </button>
             <div class="flex items-center justify-start">
                 <div class="inline-flex items-center justify-center">
-                    <img src="Logo.png" alt="loog" class="h-16 w-auto rounded-lg bg-blue-900 sm:h-20 mr-2">
+                    <img src="images/Logo.png" alt="loog" class="h-16 w-auto rounded-lg bg-blue-900 sm:h-20 mr-2">
                 </div>
                 <div class="flex flex-col gap-2">
                     <h2 class="text-3xl sm:text-3xl font-bold text-blue-900">Soniah Supplier Company Ltd Quote</h2>
@@ -127,48 +137,48 @@
                     <div>
                         <label class="block text-sm font-medium text-gray-700">Full Name <sup class="text-red-500 text-sm">*</sup></label>
                         <input type="text" name="full_name" placeholder="John Doe" required
-                          class="mt-1 w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-blue-900" />
+                          class="mt-1 w-full px-4 py-2 border rounded-md  border-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-900/20 focus:border-blue-900" />
                       </div>
                     
                       <div>
                         <label class="block text-sm font-medium text-gray-700">Phone Number <sup class="text-red-500 text-sm">*</sup></label>
                         <input type="tel" name="phone_number" placeholder="+250 78 000 0000" required
-                          class="mt-1 w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-blue-900" />
+                          class="mt-1 w-full px-4 py-2 border  border-gray-400 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-900/20 focus:border-blue-900" />
                       </div>
                       <div>
                         <label class="block text-sm font-medium text-gray-700">Email Address <sup class="text-red-500 text-sm">*</sup></label>
                         <input type="email" name="email" placeholder="email@example.com"
-                          class="mt-1 w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-blue-900" />
+                          class="mt-1 w-full px-4 py-2 border  border-gray-400 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-900/20 focus:border-blue-900" />
                       </div>
                     
                       <div>
                         <label class="block text-sm font-medium text-gray-700">Company or Project Name  <sup class="text-red-500 text-sm">*</sup></label>
                         <input type="text" name="company_or_project_name" placeholder="Project X or ABC Ltd."
-                          class="mt-1 w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-blue-900" />
+                          class="mt-1 w-full px-4 py-2 border  border-gray-400 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-900/20 focus:border-blue-900" />
                       </div>
                     
                       <div>
                         <label class="block text-sm font-medium text-gray-700">Delivery Location/Address <sup class="text-red-500 text-sm">*</sup></label>
                         <input type="text" name="delivery_location" placeholder="Kigali, Rwanda"
-                          class="mt-1 w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-blue-900" />
+                          class="mt-1 w-full px-4 py-2 border  border-gray-400 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-900/20 focus:border-blue-900" />
                       </div>
                       <div>
                         <label class="block text-sm font-medium text-gray-700">Date Needed <sup class="text-red-500 text-sm">*</sup></label>
                         <input type="date" name="date_needed" required
-                          class="mt-1 w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-blue-900" />
+                          class="mt-1 w-full px-4 py-2 border  border-gray-400 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-900/20 focus:border-blue-900" />
                       </div>
                 </div>
               
                 <div class="grid grid-cols-1">
                   <label class="block text-sm font-medium text-gray-700">Items Information <sup class="text-red-500 text-sm">*</sup></label>
                   <textarea name="items_information" rows="4" placeholder="Please describe the equipments you need to buy, quantity, and preferences" required
-                    class="mt-1 w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-blue-900"></textarea>
+                    class="mt-1 w-full px-4 py-2 border  border-gray-400 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-900/20 focus:border-blue-900"></textarea>
                 </div>
 
                 <div>
                   <label class="block text-sm font-medium text-gray-700">Additional Notes</label>
                   <textarea name="additional_notes" rows="3" placeholder="Any extra info or instructions"
-                    class="mt-1 w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-blue-900"></textarea>
+                    class="mt-1 w-full px-4 py-2 border  border-gray-400 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-900/20 focus:border-blue-900"></textarea>
                 </div>
               
                 <div class="flex items-start space-x-2">
@@ -184,8 +194,8 @@
                 </div>
               </form>
             <div class="mt-8 text-start text-sm flex justify-start gap-2 flex-col">
-                <p class="text-gray-600">For urgent inquiries, please call us at <a href="tel:+250780000000" class="text-blue-900 font-semibold">+250 78 000 0000</a></p>
-                <p class="text-gray-600">Or email us at <a href="mailto:info@soniahsuppliers.com" class="text-blue-900 font-semibold">info@soniahsuppliers.com. </a></p>
+                <p class="text-gray-600">For urgent inquiries, please call us at <a href="tel:+250788872103" class="text-blue-900 font-semibold">+250 788 872 103</a></p>
+                <p class="text-gray-600">Or email us at <a href="mailto:info@soniahsuppliers.rw" class="text-blue-900 font-semibold">info@soniahsuppliers.rw </a></p>
                 <p class="text-gray-600 italic">We look forward to serving you!</p>
             </div>
         </div>
@@ -241,12 +251,12 @@
                 </h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                     <div class="relative">
-                        <span class="dot h-6 w-6 rounded-full bg-blue-900 ring-8 ring-blue-900/30 absolute bottom-56 right-72 z-10"></span>
-                        <img src="globe.png" alt="Soniah Supplier Company Ltd" class="mx-auto h-80 w-auto mx-auto transition-transform duration-500 ease-in-out transform hover:scale-105" style="max-width: 100%; height: auto;">
+                        <span class="dot h-6 max-sm:h-4 max-sm:w-4 w-6 rounded-full bg-blue-900 ring-8 ring-blue-900/30 absolute bottom-56 max-sm:bottom-28 right-72 max-sm:right-1/2 z-10"></span>
+                        <img src="images/globe.png" alt="Soniah Supplier Company Ltd" class="mx-auto h-80 w-auto transition-transform duration-500 ease-in-out transform hover:scale-105" style="max-width: 100%; height: auto;">
                     </div>
                     <div>
                         <p class="text-gray-700 leading-relaxed">
-                            Established in the heart of Bugesera, Nyamata, Soniah Supplier Company Ltd has been a cornerstone of quality and reliability in Rwanda's hardware industry. We pride ourselves on offering a wide range of tools and equipment tailored to meet the needs of construction professionals, farmers, and homeowners alike. Our commitment to excellence and customer satisfaction drives us to continuously innovate and expand our offerings, ensuring that every Rwandan has access to the tools they need to succeed.
+                            Established in the heart of Bugesera, Kanzenze, Soniah Supplier Company Ltd has been a cornerstone of quality and reliability in Rwanda's hardware industry. We pride ourselves on offering a wide range of tools and equipment tailored to meet the needs of construction professionals, farmers, and homeowners alike. Our commitment to excellence and customer satisfaction drives us to continuously innovate and expand our offerings, ensuring that every Rwandan has access to the tools they need to succeed.
                         </p>
                         <p class="text-gray-700 mt-4 leading-relaxed">
                             At Soniah Supplier Company Ltd, we believe in building a brighter future for Rwanda, one tool at a time. Join us on this journey of growth, innovation, and community empowerment.
@@ -284,7 +294,7 @@
             <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12 text-blue-900">Our Product Categories</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden">
-                    <img src="cons.jpg" alt="Construction Equipment" class="w-full h-48 object-cover">
+                    <img src="images/cons.jpg" alt="Construction Equipment" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-10 p-1 text-zinc-400">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 21v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21m0 0h4.5V3.545M12.75 21h7.5V10.75M2.25 21h1.5m18 0h-18M2.25 9l4.5-1.636M18.75 3l-1.5.545m0 6.205 3 1m1.5.5-1.5-.5M6.75 7.364V3h-3v18m3-13.636 10.5-3.819" />
@@ -295,7 +305,7 @@
                     </div>
                 </div>
                 <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden">
-                    <img src="sanitary.jpg" alt="Sanitary Tools" class="w-full h-48 object-cover">
+                    <img src="images/sanitary.jpg" alt="Sanitary Tools" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-10 p-1 text-zinc-400">
                             <path stroke-linecap="round" stroke-linejoin="round" d="m7.875 14.25 1.214 1.942a2.25 2.25 0 0 0 1.908 1.058h2.006c.776 0 1.497-.4 1.908-1.058l1.214-1.942M2.41 9h4.636a2.25 2.25 0 0 1 1.872 1.002l.164.246a2.25 2.25 0 0 0 1.872 1.002h2.092a2.25 2.25 0 0 0 1.872-1.002l.164-.246A2.25 2.25 0 0 1 16.954 9h4.636M2.41 9a2.25 2.25 0 0 0-.16.832V12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 12V9.832c0-.287-.055-.57-.16-.832M2.41 9a2.25 2.25 0 0 1 .382-.632l3.285-3.832a2.25 2.25 0 0 1 1.708-.786h8.43c.657 0 1.281.287 1.709.786l3.284 3.832c.163.19.291.404.382.632M4.5 20.25h15A2.25 2.25 0 0 0 21.75 18v-2.625c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125V18a2.25 2.25 0 0 0 2.25 2.25Z" />
@@ -306,7 +316,7 @@
                     </div>
                 </div>
                 <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden">
-                    <img src="tubes.jpg" alt="Plumbing Tools" class="w-full h-48 object-cover">
+                    <img src="images/tubes.jpg" alt="Plumbing Tools" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-10 p-1 text-zinc-400">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M17.995 3.744v7.5a6 6 0 1 1-12 0v-7.5m-2.25 16.502h16.5" />
@@ -317,7 +327,7 @@
                     </div>
                 </div>
                 <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden">
-                    <img src="agri.jpg" alt="Agricultural Tools" class="w-full h-48 object-cover">
+                    <img src="images/agri.jpg" alt="Agricultural Tools" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-10 p-1 text-zinc-400">
                             <path stroke-linecap="round" stroke-linejoin="round" d="m20.25 7.5-.625 10.632a2.25 2.25 0 0 1-2.247 2.118H6.622a2.25 2.25 0 0 1-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125Z" />
@@ -327,7 +337,7 @@
                     </div>
                 </div>
                 <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden">
-                    <img src="workshop.jpg" alt="Other Tools" class="w-full h-48 object-cover">
+                    <img src="images/workshop.jpg" alt="Other Tools" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-10 p-1 text-zinc-400">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17 17.25 21A2.652 2.652 0 0 0 21 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 1 1-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 0 0 4.486-6.336l-3.276 3.277a3.004 3.004 0 0 1-2.25-2.25l3.276-3.276a4.5 4.5 0 0 0-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437 1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008Z" />
@@ -350,28 +360,28 @@
                 <h3 class="text-2xl font-semibold mb-6 text-blue-900">Construction Equipment</h3>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     <div class="product-card bg-gray-100 rounded-lg shadow-lg overflow-hidden">
-                        <img src="steelBeam.jpg" alt="Steel Beam" class="w-full h-40 sm:h-48 object-cover">
+                        <img src="images/steelBeam.jpg" alt="Steel Beam" class="w-full h-40 sm:h-48 object-cover">
                         <div class="p-4">
                             <h4 class="text-lg font-semibold">Steel Beam</h4>
                             <p class="text-gray-600">High-strength beams for durable construction projects.</p>
                         </div>
                     </div>
                     <div class="product-card bg-gray-100 rounded-lg shadow-lg overflow-hidden">
-                        <img src="steelbod.jpg" alt="Steel Rod" class="w-full h-40 sm:h-48 object-cover">
+                        <img src="images/steelbod.jpg" alt="Steel Rod" class="w-full h-40 sm:h-48 object-cover">
                         <div class="p-4">
                             <h4 class="text-lg font-semibold">Steel Rod</h4>
                             <p class="text-gray-600">Reinforcement rods for concrete structures.</p>
                         </div>
                     </div>
                     <div class="product-card bg-gray-100 rounded-lg shadow-lg overflow-hidden">
-                        <img src="spades.jpg" alt="Concrete Mixer" class="w-full h-40 sm:h-48 object-cover">
+                        <img src="images/spades.jpg" alt="Concrete Mixer" class="w-full h-40 sm:h-48 object-cover">
                         <div class="p-4">
                             <h4 class="text-lg font-semibold">Spades</h4>
                             <p class="text-gray-600">Essential tool for digging, lifting, and moving soil or materials.</p>
                         </div>
                     </div>
                     <div class="product-card bg-gray-100 rounded-lg shadow-lg overflow-hidden">
-                        <img src="hammer.jpg" alt="Heavy-Duty Hammer" class="w-full h-40 sm:h-48 object-cover">
+                        <img src="images/hammer.jpg" alt="Heavy-Duty Hammer" class="w-full h-40 sm:h-48 object-cover">
                         <div class="p-4">
                             <h4 class="text-lg font-semibold">Hammer</h4>
                             <p class="text-gray-600">Simple yet effective hammer for driving nails and other fastening tasks.</p>
@@ -384,28 +394,28 @@
                 <h3 class="text-2xl font-semibold mb-6 text-blue-900">Sanitary Tools</h3>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     <div class="product-card bg-gray-100 rounded-lg shadow-lg overflow-hidden">
-                        <img src="sanitary.jpg" alt="Toilet Cartridge" class="w-full h-40 sm:h-48 object-cover">
+                        <img src="images/sanitary.jpg" alt="Toilet Cartridge" class="w-full h-40 sm:h-48 object-cover">
                         <div class="p-4">
                             <h4 class="text-lg font-semibold">Toilet Cartridge</h4>
                             <p class="text-gray-600">Leak-proof cartridge for efficient toilet flushing.</p>
                         </div>
                     </div>
                     <div class="product-card bg-gray-100 rounded-lg shadow-lg overflow-hidden">
-                        <img src="cleaning brushes.jpg" alt="Cleaning Brush" class="w-full h-40 sm:h-48 object-cover">
+                        <img src="images/cleaning brushes.jpg" alt="Cleaning Brush" class="w-full h-40 sm:h-48 object-cover">
                         <div class="p-4">
                             <h4 class="text-lg font-semibold">Cleaning Brush</h4>
                             <p class="text-gray-600">Durable brush for thorough bathroom cleaning.</p>
                         </div>
                     </div>
                     <div class="product-card bg-gray-100 rounded-lg shadow-lg overflow-hidden">
-                        <img src="valve.jpg" alt="Toilet Valve" class="w-full h-40 sm:h-48 object-cover">
+                        <img src="images/valve.jpg" alt="Toilet Valve" class="w-full h-40 sm:h-48 object-cover">
                         <div class="p-4">
                             <h4 class="text-lg font-semibold">Toilet Valve</h4>
                             <p class="text-gray-600">High-quality valve for reliable water control.</p>
                         </div>
                     </div>
                     <div class="product-card bg-gray-100 rounded-lg shadow-lg overflow-hidden">
-                        <img src="bathroom.jpg" alt="Bathroom Accessory" class="w-full h-40 sm:h-48 object-cover">
+                        <img src="images/bathroom.jpg" alt="Bathroom Accessory" class="w-full h-40 sm:h-48 object-cover">
                         <div class="p-4">
                             <h4 class="text-lg font-semibold">Bathroom Accessory</h4>
                             <p class="text-gray-600">Stylish fittings to enhance bathroom aesthetics.</p>
@@ -418,28 +428,28 @@
                 <h3 class="text-2xl font-semibold mb-6 text-blue-900">Plumbing Tools & Equipment</h3>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     <div class="product-card bg-gray-100 rounded-lg shadow-lg overflow-hidden">
-                        <img src="pipe-wrench.jpg" alt="Pipe Wrench" class="w-full h-40 sm:h-48 object-cover">
+                        <img src="images/pipe-wrench.jpg" alt="Pipe Wrench" class="w-full h-40 sm:h-48 object-cover">
                         <div class="p-4">
                             <h4 class="text-lg font-semibold">Pipe Wrench</h4>
                             <p class="text-gray-600">Heavy-duty tool for secure pipe installations.</p>
                         </div>
                     </div>
                     <div class="product-card bg-gray-100 rounded-lg shadow-lg overflow-hidden">
-                        <img src="pipe PVC.jpg" alt="PVC Pipe" class="w-full h-40 sm:h-48 object-cover">
+                        <img src="images/pipe PVC.jpg" alt="PVC Pipe" class="w-full h-40 sm:h-48 object-cover">
                         <div class="p-4">
                             <h4 class="text-lg font-semibold">PVC Pipe</h4>
                             <p class="text-gray-600">Corrosion-resistant pipe for water distribution.</p>
                         </div>
                     </div>
                     <div class="product-card bg-gray-100 rounded-lg shadow-lg overflow-hidden">
-                        <img src="fittings.jpg" alt="Pipe Fitting" class="w-full h-40 sm:h-48 object-cover">
+                        <img src="images/fittings.jpg" alt="Pipe Fitting" class="w-full h-40 sm:h-48 object-cover">
                         <div class="p-4">
                             <h4 class="text-lg font-semibold">Pipe Fitting</h4>
                             <p class="text-gray-600">Leak-proof fittings for seamless plumbing systems.</p>
                         </div>
                     </div>
                     <div class="product-card bg-gray-100 rounded-lg shadow-lg overflow-hidden">
-                        <img src="plumbing-kit.jpg" alt="Plumbing Kit" class="w-full h-40 sm:h-48 object-cover">
+                        <img src="images/plumbing-kit.jpg" alt="Plumbing Kit" class="w-full h-40 sm:h-48 object-cover">
                         <div class="p-4">
                             <h4 class="text-lg font-semibold">Plumbing Kit</h4>
                             <p class="text-gray-600">Complete set for professional plumbing tasks.</p>
@@ -452,28 +462,28 @@
                 <h3 class="text-2xl font-semibold mb-6 text-blue-900">Agricultural Tools</h3>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     <div class="product-card bg-gray-100 rounded-lg shadow-lg overflow-hidden">
-                        <img src="hoe.jpg" alt="Hoe" class="w-full h-40 sm:h-48 object-cover">
+                        <img src="images/hoe.jpg" alt="Hoe" class="w-full h-40 sm:h-48 object-cover">
                         <div class="p-4">
                             <h4 class="text-lg font-semibold">Hoe</h4>
                             <p class="text-gray-600">Sturdy tool for soil preparation and weeding.</p>
                         </div>
                     </div>
                     <div class="product-card bg-gray-100 rounded-lg shadow-lg overflow-hidden">
-                        <img src="folked hoe.jpg" alt="Forked Hoe" class="w-full h-40 sm:h-48 object-cover">
+                        <img src="images/folked hoe.jpg" alt="Forked Hoe" class="w-full h-40 sm:h-48 object-cover">
                         <div class="p-4">
                             <h4 class="text-lg font-semibold">Forked Hoe</h4>
                             <p class="text-gray-600">Versatile tool for digging and harvesting.</p>
                         </div>
                     </div>
                     <div class="product-card bg-gray-100 rounded-lg shadow-lg overflow-hidden">
-                        <img src="sackle.png" alt="Sickle" class="w-full h-40 sm:h-48 object-cover">
+                        <img src="images/sackle.png" alt="Sickle" class="w-full h-40 sm:h-48 object-cover">
                         <div class="p-4">
                             <h4 class="text-lg font-semibold">Sickle</h4>
                             <p class="text-gray-600">Sharp tool for efficient crop harvesting.</p>
                         </div>
                     </div>
                     <div class="product-card bg-gray-100 rounded-lg shadow-lg overflow-hidden">
-                        <img src="agri-spade.jpg" alt="Spade" class="w-full h-40 sm:h-48 object-cover">
+                        <img src="images/agri-spade.jpg" alt="Spade" class="w-full h-40 sm:h-48 object-cover">
                         <div class="p-4">
                             <h4 class="text-lg font-semibold">Spade</h4>
                             <p class="text-gray-600">Reliable tool for digging and planting.</p>
@@ -486,33 +496,52 @@
                 <h3 class="text-2xl font-semibold mb-6 text-blue-900">Multi-Purpose Tools</h3>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     <div class="product-card bg-gray-100 rounded-lg shadow-lg overflow-hidden">
-                        <img src="6-2-hand-saw-free-png-image.webp" alt="Saw" class="w-full h-40 sm:h-48 object-cover">
+                        <img src="images/6-2-hand-saw-free-png-image.webp" alt="Saw" class="w-full h-40 sm:h-48 object-cover">
                         <div class="p-4">
                             <h4 class="text-lg font-semibold">Saw</h4>
                             <p class="text-gray-600">Precision tool for cutting wood and metal.</p>
                         </div>
                     </div>
                     <div class="product-card bg-gray-100 rounded-lg shadow-lg overflow-hidden">
-                        <img src="screwdriverset.png" alt="Screwdriver Set" class="w-full h-40 sm:h-48 object-cover">
+                        <img src="images/screwdriverset.png" alt="Screwdriver Set" class="w-full h-40 sm:h-48 object-cover">
                         <div class="p-4">
                             <h4 class="text-lg font-semibold">Screwdriver Set</h4>
                             <p class="text-gray-600">Multi-purpose set for various fastening tasks.</p>
                         </div>
                     </div>
                     <div class="product-card bg-gray-100 rounded-lg shadow-lg overflow-hidden">
-                        <img src="nd.jpg" alt="Hand Tool Kit" class="w-full h-40 sm:h-48 object-cover">
+                        <img src="images/nd.jpg" alt="Hand Tool Kit" class="w-full h-40 sm:h-48 object-cover">
                         <div class="p-4">
                             <h4 class="text-lg font-semibold">Hand Tool Kit</h4>
                             <p class="text-gray-600">Comprehensive kit for general repairs and tasks.</p>
                         </div>
                     </div>
                     <div class="product-card bg-gray-100 rounded-lg shadow-lg overflow-hidden">
-                        <img src="cutter.jpg" alt="Cutter" class="w-full h-40 sm:h-48 object-cover">
+                        <img src="images/cutter.jpg" alt="Cutter" class="w-full h-40 sm:h-48 object-cover">
                         <div class="p-4">
                             <h4 class="text-lg font-semibold">Cutter</h4>
                             <p class="text-gray-600">Sharp tool for precise cutting applications.</p>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+        <div class="grid grid-cols-1 p-10 max-sm:px-3">
+            <div class="rounded-md overflow-hidden relative bg-center bg-cover bg-zinc-200 min-h-96 border border-blue-900 shadow-lg" style="background-image: url('images/hero.jpg');">
+                <div class="bg-gradient-to-br from-blue-950/70 to-yellow-600 from-70% to-30% absolute top-0 bottom-0 left-0 right-0"></div>
+                <div class="inline-flex absolute bottom-10 right-10 z-10 max-sm:right-5 max-sm:bottom-6">
+                    <img src="images/Logo.png" alt="" class="h-30 max-sm:h-20">
+                </div>
+                <div class="content h-full w-full flex items-center justify-center flex-col gap-8 p-10 z-30 relative">
+                    <h1 class="text-blue-100 text-4xl">
+                        Can't Find the Product you want to buy ?
+                    </h1>
+                    <p class="text-gray-300 sm:max-w-2/3">
+                        If you can't find the exact tool or equipment you're looking for, don't worry! Our store offers a much wider selection than what you see here. Simply reach out to us or book a quote for any hardware tools you need—even if they're not listed. We’re committed to sourcing and delivering the right products for your project, anywhere in Rwanda, at flexible prices you won’t find elsewhere. Let us know your requirements and experience our personalized service!
+                    </p>
+                    <a href="" class="flex max-sm:self-start shadow-lg items-center justify-center rounded-md text-blue-950 bg-white px-10 max-sm:px-5 py-2 font-medium">
+                        <span class="text">Ask for Equipment</span>
+                    </a>
                 </div>
             </div>
         </div>
@@ -522,10 +551,11 @@
     <section id="map" class="py-16 bg-white">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12 text-blue-900">Our Location</h2>
-            <p class="text-center text-gray-700 mb-8">Visit us in Nyamata, Bugesera, Rwanda, or contact us for nationwide delivery.</p>
+            <p class="text-center text-gray-700 mb-8">Visit us in Kanzenze, Bugesera Near Bus Park, Rwanda, or contact us for nationwide delivery.</p>
             <div class="w-full h-96 map-iframe">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15958.123456789012!2d30.1451!3d-2.1524!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dc4e7f3e8b8c1f%3A0x5c3f8e2b7b8c4e1a!2sNyamata%2C%20Rwanda!5e0!3m2!1sen!2srw!4v1698765432109!5m2!1sen!2srw" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!4v1747656304956!6m8!1m7!1sCAoSLEFGMVFpcE1wQ2d6b2t2b2p3d3ZzQ2Z2d3p6d1l3!2m2!1d-2.091202835314676!2d30.0874571318599!3f136.1946223296532!4f3.8491215446330074!5f0.7820865974627469" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
+            <!-- <iframe src="https://www.google.com/maps/embed?pb=!4v1747656304956!6m8!1m7!1sCAoSHENJQUJJaEFHYnphcU9CSHhHMmZqSzlBQUJCczk.!2m2!1d-2.091202835314676!2d30.0874571318599!3f136.1946223296532!4f3.8491215446330074!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
         </div>
     </section>
 
@@ -537,15 +567,15 @@
                 <form action="https://formspree.io/f/myzwebpq" method="POST" class="space-y-6">
                     <div>
                         <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
-                        <input type="text" id="name" name="name" class="mt-1 px-4 py-3 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" required>
+                        <input type="text" id="name" name="name" class="mt-1 px-4 py-3 block w-full border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-900/40 outline-0 focus:border-blue-900" required>
                     </div>
                     <div>
                         <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-                        <input type="email" id="email" name="email" class="mt-1 px-4 py-3 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" required>
+                        <input type="email" id="email" name="email" class="mt-1 px-4 py-3 block w-full border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-900/40 outline-0 focus:border-blue-900" required>
                     </div>
                     <div>
                         <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
-                        <textarea id="message" name="message" rows="4" class="mt-1 px-4 py-3 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" required></textarea>
+                        <textarea id="message" name="message" rows="4" class="mt-1 px-4 py-3 block w-full border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-900/40 outline-0 focus:border-blue-900" required></textarea>
                     </div>
                     <button type="submit" class="btn-primary">Send Message</button>
                 </form>
@@ -559,7 +589,7 @@
                         </div>
                         <div class="flex flex-col text-sm">
                             <span class="">Address</span>
-                            <span class="">KN 123 St, Nyamata, Bugesera, Rwanda</span>
+                            <span class="">Kanzenze, Bugesera, Rwanda (Near Bus Park)</span>
                         </div>
                     </div>
                     <div class="flex items-center justify-start gap-x-2">
@@ -571,7 +601,7 @@
 
                         <div class="flex flex-col text-sm">
                             <span class="">Tel</span>
-                            <span class="">+250 788 123 456</span>
+                            <span class="">+250 788 872 103</span>
                         </div>
                     </div>
                     <div class="flex items-center justify-start gap-x-2">
@@ -582,7 +612,7 @@
                         </div>                   
                         <div class="flex flex-col text-sm">
                             <span class="">Email</span>
-                            <span class="">info@soniahsuppliers.com</span>
+                            <span class="">info@soniahsuppliers.rw</span>
                         </div>
                     </div>
                     <div class="flex items-center justify-start gap-x-2">
@@ -613,7 +643,10 @@
                 <a href="#map" class="text-yellow-400 hover:underline">Our Location</a>
                 <a href="#contact" class="text-yellow-400 hover:underline">Contact</a>
             </div>
-            <p class="mt-4 text-sm">© 2025 Soniah Supplier Company Ltd. All rights reserved.</p>
+            <p class="mt-4 text-sm">© <span id="current-year"></span> Soniah Supplier Company Ltd. All rights reserved.</p>
+            <script>
+                document.getElementById('current-year').textContent = new Date().getFullYear();
+            </script>
         </div>
     </footer>
 
@@ -622,7 +655,29 @@
     <script>
         function toggleMenu() {
             const menu = document.getElementById('menu');
-            menu.classList.toggle('hidden');
+            const MenuButton = document.getElementById('menuBtn');
+            
+            // Toggle menu bar..
+            menu.classList.toggle('max-sm:hidden');
+
+            // Toggle icon of toogle button..
+
+            if(menu.classList.contains('max-sm:hidden')){
+                MenuButton.innerHTML=
+                `
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                `;
+            }else{
+                MenuButton.innerHTML=
+                `
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                    </svg>
+
+                `;
+            }
         }
         function toggleQuoteModal() {
             const modal = document.getElementById('quote-modal');
